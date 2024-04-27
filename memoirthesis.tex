@@ -10,11 +10,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Author: Victor Brena
 % Description: Contains the thesis template using memoir class,
-% which is mainly based on book class but permits better control of 
-% chapter styles for example. This template is an adaptation and 
+% which is mainly based on book class but permits better control of
+% chapter styles for example. This template is an adaptation and
 % modification of Oscar's.
-% 
-% Memoir is a flexible class for typesetting poetry, fiction, 
+%
+% Memoir is a flexible class for typesetting poetry, fiction,
 % non-fiction and mathematical works as books, reports, articles or
 % manuscripts. CTAN repository is found at:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
@@ -38,14 +38,14 @@
 \usepackage{ifpdf}
 \ifpdf
 \pdfinfo{
-   /Author (Author's name)
-   /Title (MSc Thesis)
-   /Keywords (One; Two;Three)
+   /Author (Henry Addison)
+   /Title (PhD Thesis)
+   /Keywords (machine learning; climate model emulation)
    /CreationDate (D:\pdfdate)
 }
 \fi
-% When draft option is on. 
-\ifdraftdoc 
+% When draft option is on.
+\ifdraftdoc
 	\usepackage{draftwatermark}				%Sets watermarks up.
 	\SetWatermarkScale{0.3}
 	\SetWatermarkText{\bf Draft: \today}
@@ -56,15 +56,15 @@
 \newsubfloat{table}
 % Better page layout for A4 paper, see memoir manual.
 \settrimmedsize{297mm}{210mm}{*}
-\setlength{\trimtop}{0pt} 
-\setlength{\trimedge}{\stockwidth} 
-\addtolength{\trimedge}{-\paperwidth} 
-\settypeblocksize{634pt}{448.13pt}{*} 
-\setulmargins{4cm}{*}{*} 
-\setlrmargins{*}{*}{1.5} 
-\setmarginnotes{17pt}{51pt}{\onelineskip} 
-\setheadfoot{\onelineskip}{2\onelineskip} 
-\setheaderspaces{*}{2\onelineskip}{*} 
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{634pt}{448.13pt}{*}
+\setulmargins{4cm}{*}{*}
+\setlrmargins{*}{*}{1.5}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
 \checkandfixthelayout
 %
 \frenchspacing
@@ -78,57 +78,57 @@
 % chosen to ensure clarity and legibility for the main text and for any
 % quotations and footnotes. Margins should allow for eventual hard binding.
 %
-% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing 
-% enables double spacing but leaves single spaced for captions for instance. 
-\OnehalfSpacing 
+% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing
+% enables double spacing but leaves single spaced for captions for instance.
+\OnehalfSpacing
 %
 % Sets numbering division level
-\setsecnumdepth{subsection} 
+\setsecnumdepth{subsection}
 \maxsecnumdepth{subsubsection}
 %
-% Chapter style (taken and slightly modified from Lars Madsen Memoir Chapter 
+% Chapter style (taken and slightly modified from Lars Madsen Memoir Chapter
 % Styles document
 \usepackage{calc,soul,fourier}
-\makeatletter 
-\newlength\dlf@normtxtw 
-\setlength\dlf@normtxtw{\textwidth} 
-\newsavebox{\feline@chapter} 
+\makeatletter
+\newlength\dlf@normtxtw
+\setlength\dlf@normtxtw{\textwidth}
+\newsavebox{\feline@chapter}
 \newcommand\feline@chapter@marker[1][4cm]{%
-	\sbox\feline@chapter{% 
+	\sbox\feline@chapter{%
 		\resizebox{!}{#1}{\fboxsep=1pt%
-			\colorbox{gray}{\color{white}\thechapter}% 
+			\colorbox{gray}{\color{white}\thechapter}%
 		}}%
-		\rotatebox{90}{% 
+		\rotatebox{90}{%
 			\resizebox{%
-				\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}% 
+				\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}%
 			{!}{\scshape\so\@chapapp}}\quad%
 		\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
-} 
+}
 \newcommand\feline@chm[1][4cm]{%
-	\sbox\feline@chapter{\feline@chapter@marker[#1]}% 
+	\sbox\feline@chapter{\feline@chapter@marker[#1]}%
 	\makebox[0pt][c]{% aka \rlap
 		\makebox[1cm][r]{\usebox\feline@chapter}%
 	}}
 \makechapterstyle{daleifmodif}{
-	\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so} 
-	\renewcommand\chaptitlefont{\normalfont\Large\bfseries\scshape} 
-	\renewcommand\chapternamenum{} \renewcommand\printchaptername{} 
-	\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par} 
-	\renewcommand\afterchapternum{\par\vskip\midchapskip} 
+	\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so}
+	\renewcommand\chaptitlefont{\normalfont\Large\bfseries\scshape}
+	\renewcommand\chapternamenum{} \renewcommand\printchaptername{}
+	\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par}
+	\renewcommand\afterchapternum{\par\vskip\midchapskip}
 	\renewcommand\printchaptertitle[1]{\color{gray}\chaptitlefont\raggedleft ##1\par}
-} 
-\makeatother 
+}
+\makeatother
 \chapterstyle{daleifmodif}
 %
 % UoB guidelines:
 %
 % The pages should be numbered consecutively at the bottom centre of the
 % page.
-\makepagestyle{myvf} 
-\makeoddfoot{myvf}{}{\thepage}{} 
-\makeevenfoot{myvf}{}{\thepage}{} 
-\makeheadrule{myvf}{\textwidth}{\normalrulethickness} 
-\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{} 
+\makepagestyle{myvf}
+\makeoddfoot{myvf}{}{\thepage}{}
+\makeevenfoot{myvf}{}{\thepage}{}
+\makeheadrule{myvf}{\textwidth}{\normalrulethickness}
+\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{}
 \makeoddhead{myvf}{}{}{\small\textsc{\rightmark}}
 \pagestyle{myvf}
 %
@@ -163,48 +163,48 @@
 \usepackage{newlfont}					%Helpful package for fonts and symbols
 \usepackage{layouts}					%Layout diagrams
 \usepackage{graphicx}					%Calls figure environment
-\usepackage{longtable,rotating}			%Long tab environments including rotation. 
-\usepackage[utf8]{inputenc}			%Needed to encode non-english characters 
+\usepackage{longtable,rotating}			%Long tab environments including rotation.
+\usepackage[utf8]{inputenc}			%Needed to encode non-english characters
 									%directly for mac
 \usepackage{colortbl}					%Makes coloured tables
 \usepackage{wasysym}					%More math symbols
 \usepackage{mathrsfs}					%Even more math symbols
-\usepackage{float}						%Helps to place figures, tables, etc. 
+\usepackage{float}						%Helps to place figures, tables, etc.
 \usepackage{verbatim}					%Permits pre-formated text insertion
 \usepackage{upgreek }					%Calls other kind of greek alphabet
 \usepackage{latexsym}					%Extra symbols
 \usepackage[square,numbers,
-		     sort&compress]{natbib}		%Calls bibliography commands 
+		     sort&compress]{natbib}		%Calls bibliography commands
 \usepackage{url}						%Supports url commands
 % \usepackage{etex}						%eTeXÕs extended support for counters
-% \usepackage{fixltx2e}					%Eliminates some in felicities of the 
+% \usepackage{fixltx2e}					%Eliminates some in felicities of the
 									%original LaTeX kernel
 \usepackage[spanish,english]{babel}		%For languages characters and hyphenation
 \usepackage{color}                    				%Creates coloured text and background
 \usepackage[colorlinks=true,
 		     allcolors=black]{hyperref}              %Creates hyperlinks in cross references
-\usepackage{memhfixc}					%Must be used on memoir document 
+\usepackage{memhfixc}					%Must be used on memoir document
 									%class after hyperref
 \usepackage{enumerate}					%For enumeration counter
 \usepackage{footnote}					%For footnotes
 \usepackage{microtype}					%Makes pdf look better.
-\usepackage{rotfloat}					%For rotating and float environments as tables, 
-									%figures, etc. 
-\usepackage{alltt}						%LaTeX commands are not disabled in 
+\usepackage{rotfloat}					%For rotating and float environments as tables,
+									%figures, etc.
+\usepackage{alltt}						%LaTeX commands are not disabled in
 									%verbatim-like environment
-\usepackage[version=0.96]{pgf}			%PGF/TikZ is a tandem of languages for producing vector graphics from a 
+\usepackage[version=0.96]{pgf}			%PGF/TikZ is a tandem of languages for producing vector graphics from a
 \usepackage{tikz}						%geometric/algebraic description.
 \usetikzlibrary{arrows,shapes,decorations,
 		       automata,backgrounds,
-		       petri,topaths}				%To use diverse features from tikz		
-% \printglossaries below creates a list of abbreviations. 
-% \gls, \newacronym, \acrlongr a related commands are then 
+		       petri,topaths}				%To use diverse features from tikz
+% \printglossaries below creates a list of abbreviations.
+% \gls, \newacronym, \acrlongr a related commands are then
 % used throughout the text, so that latex can automatically
 % keep track of which abbreviations have already been defined in the text.
 \usepackage[acronym,toc]{glossaries}
 \makeglossaries
-%							
-%Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
+%
+%Reduce widows  (the last line of a paragraph at the start of a page) and orphans
 % (the first line of paragraph at the end of a page)
 \widowpenalty=1000
 \clubpenalty=1000
@@ -215,7 +215,7 @@
 \newcommand{\parcial}[2]{\frac{\partial#1}{\partial#2}}                             %Defines a partial operator
 \newcommand{\vectorr}[1]{\mathbf{#1}}                                                        %Defines a bold vector
 \newcommand{\vecol}[2]{\left(                                                                         %Defines a column vector
-	\begin{array}{c} 
+	\begin{array}{c}
 		\displaystyle#1 \\
 		\displaystyle#2
 	\end{array}\right)}
@@ -249,7 +249,7 @@
 \renewenvironment{proof}[1][\proofname.]{\par
  \ifnum \theproofcount>0 \pushQED{\whiteged} \else \pushQED{\blackged} \fi%
  \refstepcounter{proofcount}
- \normalfont 
+ \normalfont
  \trivlist
  \item[\hskip\labelsep
        \itshape
@@ -273,10 +273,10 @@
 %
 % My caption style
 \newcommand{\mycaption}[2][\@empty]{
-	\captionnamefont{\scshape} 
+	\captionnamefont{\scshape}
 	\changecaptionwidth
 	\captionwidth{0.9\linewidth}
-	\captiondelim{.\:} 
+	\captiondelim{.\:}
 	\indentcaption{0.75cm}
 	\captionstyle[\centering]{}
 	\setlength{\belowcaptionskip}{10pt}
@@ -334,13 +334,13 @@
 % UoB guidlines:
 %
 % Preliminary pages
-% 
+%
 % The five preliminary pages must be the Title Page, Abstract, Dedication
 % and Acknowledgements, Author's Declaration and Table of Contents.
 % These should be single-sided.
-% 
+%
 % Table of contents, list of tables and illustrative material
-% 
+%
 % The table of contents must list, with page numbers, all chapters,
  % sections and subsections, the list of references, bibliography, list of
 % abbreviations and appendices. The list of tables and illustrations
@@ -421,7 +421,7 @@
 % 17.27. If a PGR student uses their published works as full chapters in the dissertation, they must follow the policy on
 
 
-% 
+%
 \frontmatter
 \pagenumbering{roman}
 %
@@ -453,7 +453,7 @@
 \listoffigures
 \addtocontents{lof}{\par\nobreak\textbf{{\scshape Figure} \hfill Page}\par\nobreak}
 \clearemptydoublepage
-% 
+%
 % Add list of abbreviations and include in toc
 % https://www.overleaf.com/learn/latex/Glossaries
 \printglossary[type=\acronymtype,title=Abbreviations,toctitle=List of abbreviations]
@@ -482,5 +482,5 @@
 %
 % Add index
 %\printindex
-%   
+%
 \end{document}
