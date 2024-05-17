@@ -1,0 +1,27 @@
+\let\textcircled=\pgftextcircled
+\chapter{Multi-variable Emulation}
+\label{chap:mv}
+
+\section{Introduction}
+
+ML has been shown to be effective in emulating high-resolution climate model even for a highly variable and stochastic setting like UK precipitation.
+However, it is often important to have coherent samples of more than one variable. For example, heat stress may involve air temp, humidity and wind speed \cite{Blazejczyk2012UTCIcomparison}. Indices have been created to simplify complex joint distributions into a single value. This allows a method for evaluating joint samples from a multivariate emulator - as well as modelling the marginal distributions of each variable and capturing some elements of the joint distribution, ideally the emulator should be able to recreate the same distribution of a compound index.
+These indicies also allow us to focus on high impact events - for example it is more important to capture the distribution of stressfully hot days rather than small variations on more temperate days.
+
+\section{Method}
+
+\subsection{Data}
+
+Variables
+
+\begin{itemize}
+    \item Temp at 1.5m
+    \item relhum at 1.5m
+    \item precip
+\end{itemize}
+
+Indices
+
+\begin{itemize}
+    \item SWBGT
+\end{itemize}

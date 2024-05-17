@@ -12,6 +12,7 @@
 *.ind
 *.ist
 *.lof
+*.lot
 *.toc
 memoirthesis.log
 memoirthesis.out
