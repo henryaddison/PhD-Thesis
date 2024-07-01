@@ -18,9 +18,9 @@
 *.lof
 *.lot
 *.toc
-memoirthesis.log
-memoirthesis.out
-memoirthesis.pdf
+thesis.log
+thesis.out
+thesis.pdf
 *.run.xml
 *.synctex.gz
 *.synctex(busy)

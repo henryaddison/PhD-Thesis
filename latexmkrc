@@ -9,6 +9,6 @@ sub makeglossaries {
     return system "makeglossaries", "-d", $path, $base_name;
 }
 
-@default_files = ('memoirthesis.tex');
+@default_files = ('thesis.tex');
 $pdf_mode = 1;                        # pdflatex is 1, xelatex is 5
 $max_repeat = 5;
