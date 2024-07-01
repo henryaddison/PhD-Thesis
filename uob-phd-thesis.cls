@@ -74,6 +74,8 @@
 \RequirePackage{etoolbox}
 \RequirePackage{thmtools}
 \RequirePackage{import}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 
 \RequirePackage[autostyle=false, style=english]{csquotes}
 \RequirePackage[british]{babel}
