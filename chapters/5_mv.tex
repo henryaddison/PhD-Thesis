@@ -31,6 +31,13 @@ Although there may be issues with this simplification \parencite{kong2022wbgtapp
 \section{results}
 \label{mv:results}
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[height=0.35\textheight]{chapters/figures/5_mv/mv-samples.png}
+	\caption{Multivariate samples from a multivariate model and a combination of samples from univariate models (one for each variable). For the former, a single emulator produces samples of all variables in one go. In the latter case, samples of each variable are randomly paired.}
+	\label{fig:mv-samples}
+\end{figure}
+
 I compare stand-alone univariate models for three variables (hurs, tas and pr) against a single multivariate model that models all three. I would expect on many univariate analyses the univariate model would out-perform the multivariate model but would not do so well for any analysis that uses the joint distribution of more than one of these variables.
 However, I find for the univarate marginal distribution, the multivariate does better.
 This could be because:
